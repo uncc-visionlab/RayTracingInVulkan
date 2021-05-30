@@ -100,33 +100,33 @@ For example, on Ubuntu 20.04 (same as the CI pipeline, build steps on other dist
 * [NVIDIA Converting VK_NV_ray_tracing to VK_KHR_ray_tracing](https://nvpro-samples.github.io/vk_raytracing_tutorial_KHR/NV_to_KHR.md.htm)
 * [Vulkan Ray Tracing Final Specification Release](https://www.khronos.org/blog/vulkan-ray-tracing-final-specification-release)
 
-Addendum for linux users for building without using Microsoft's vcpkg:
-Install the Vulkan SDK from here (https://vulkan.lunarg.com/sdk/home) 
-I suggest downloading the Vulkan SDK 1.2.176.1 [vulkansdk-linux-x86_64-1.2.176.1.tar.gz](https://sdk.lunarg.com/sdk/download/1.2.176.1/linux/vulkansdk-linux-x86_64-1.2.176.1.tar.gz)
-This version of the Vulkan SDK matches the headers packaged into the project (in the third_party folder) which are version 1.2.176.1 
+### Addendum for linux users for building without using Microsoft's vcpkg:
 
-Compile the Vulkan SDK per the [Vulkan SDK install directions](https://vulkan.lunarg.com/doc/view/1.2.131.2/linux/getting_started.html)
+* Install the Vulkan SDK from here (https://vulkan.lunarg.com/sdk/home). I suggest downloading the Vulkan SDK 1.2.176.1 [vulkansdk-linux-x86_64-1.2.176.1.tar.gz](https://sdk.lunarg.com/sdk/download/1.2.176.1/linux/vulkansdk-linux-x86_64-1.2.176.1.tar.gz) This version of the Vulkan SDK matches the headers packaged into the project (in the third_party folder) which are version 1.2.176.1 
+* Compile the Vulkan SDK per the [Vulkan SDK install directions](https://vulkan.lunarg.com/doc/view/1.2.131.2/linux/getting_started.html)
 
 Compile the RayTracingInVulkan project files with the following commands:
-
-mkdir build
-cd build
-cmake ..
-make
+```
+> mkdir build
+> cd build
+> cmake ..
+> make
+```
 
 Run the code:
-
-cd bin
-export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
-export PATH=$PATH:$VULKAN_SDK/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
-export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
-./bin/RayTracer
-
+```
+> cd bin
+> export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
+> export PATH=$PATH:$VULKAN_SDK/bin
+> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
+> export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
+> ./bin/RayTracer
+```
 The export commands set your environment variables these make the Vulkan SDK library and validation layers available to the operating system:
-
-export VULKAN_SDK=<your Vulkan SDK location> (mine is /home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64)
-export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
-export PATH=$PATH:$VULKAN_SDK/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
-export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
+```
+> export VULKAN_SDK=<your Vulkan SDK location> (mine is /home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64)
+> export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
+> export PATH=$PATH:$VULKAN_SDK/bin
+> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
+> export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
+```
