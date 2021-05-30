@@ -1,0 +1,7 @@
+[submodule "third_party/tinyobjloader"]
+	path = third_party/tinyobjloader
+	url = https://github.com/tinyobjloader/tinyobjloader.git
+	branch = master
+[submodule "third_party/vulkan"]
+	path = third_party/vulkan
+	url = https://github.com/KhronosGroup/Vulkan-Headers.git
