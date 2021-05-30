@@ -106,6 +106,15 @@ For example, on Ubuntu 20.04 (same as the CI pipeline, build steps on other dist
 * Compile the Vulkan SDK per the [Vulkan SDK install directions](https://vulkan.lunarg.com/doc/view/1.2.131.2/linux/getting_started.html)
 * Clone this repository using *git clone --recurse-submodules https://github.com/uncc-visionlab/RayTracingInVulkan.git*
 
+Run the needed export commands set your environment variables these make the Vulkan SDK library and validation layers available to the operating system:
+```
+> export VULKAN_SDK=<your Vulkan SDK location> #(mine is /home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64)
+For example--> export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
+> export PATH=$PATH:$VULKAN_SDK/bin
+> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
+> export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
+```
+
 Compile the RayTracingInVulkan project files with the following commands:
 ```
 > mkdir build
@@ -122,12 +131,4 @@ Run the code:
 > export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
 > export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
 > ./bin/RayTracer
-```
-The export commands set your environment variables these make the Vulkan SDK library and validation layers available to the operating system:
-```
-> export VULKAN_SDK=<your Vulkan SDK location> (mine is /home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64)
-> export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64
-> export PATH=$PATH:$VULKAN_SDK/bin
-> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
-> export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
 ```

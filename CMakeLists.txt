@@ -106,12 +106,12 @@ include_directories(
     third_party/glm
     third_party/stb
     third_party/vulkan/include
-    #/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64/include/vulkan
+    #$ENV{VULKAN_SDK}/include/vulkan
 )
 link_directories(
     ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
     ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}
-    /home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/x86_64/lib
+    $ENV{VULKAN_SDK}/lib
 )
 set(STB_INCLUDE_DIRS "")
 add_subdirectory(src)
