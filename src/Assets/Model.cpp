@@ -11,7 +11,14 @@
 
 #include <tiny_obj_loader.h>
 #include <chrono>
+// Needed for Linux GCC versions < 8
+#ifdef linux
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#else
 #include <filesystem>
+namespace fs = std::filesystem;
+#endif
 #include <iostream>
 #include <unordered_map>
 #include <vector>
@@ -47,7 +54,7 @@ Model Model::LoadModel(const std::string& filename)
 	std::cout << "- loading '" << filename << "'... " << std::flush;
 
 	const auto timer = std::chrono::high_resolution_clock::now();
-	const std::string materialPath = std::filesystem::path(filename).parent_path().string();
+	const std::string materialPath = fs::path(filename).parent_path().string();
 	
 	tinyobj::ObjReader objReader;
 	
