@@ -121,7 +121,7 @@ export VULKAN_SDK=/home/arwillis/bin/vulkansdk-linux-x86_64-1.2.176.1/1.2.176.1/
 export PATH=$PATH:$VULKAN_SDK/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VULKAN_SDK/lib
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d/
-./bin/RayTracerd
+./bin/RayTracer
 
 The export commands set your environment variables these make the Vulkan SDK library and validation layers available to the operating system:
 
