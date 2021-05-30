@@ -104,6 +104,7 @@ For example, on Ubuntu 20.04 (same as the CI pipeline, build steps on other dist
 
 * Install the Vulkan SDK from here (https://vulkan.lunarg.com/sdk/home). I suggest downloading the Vulkan SDK 1.2.176.1 [vulkansdk-linux-x86_64-1.2.176.1.tar.gz](https://sdk.lunarg.com/sdk/download/1.2.176.1/linux/vulkansdk-linux-x86_64-1.2.176.1.tar.gz) This version of the Vulkan SDK matches the headers packaged into the project (in the third_party folder) which are version 1.2.176.1 
 * Compile the Vulkan SDK per the [Vulkan SDK install directions](https://vulkan.lunarg.com/doc/view/1.2.131.2/linux/getting_started.html)
+* Clone this repository using *git clone --recurse-submodules https://github.com/uncc-visionlab/RayTracingInVulkan.git*
 
 Compile the RayTracingInVulkan project files with the following commands:
 ```
